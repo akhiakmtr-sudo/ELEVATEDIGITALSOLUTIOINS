@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HERO_IMAGES = [
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674282/WhatsApp_Image_2025-12-25_at_20.18.26_r2u3vx.jpg",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766675952/Untitled_1920_x_768_px_agbaho.png",
   "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.28_mta0wc.jpg",
   "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.27_1_c5xb3v.jpg",
   "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674280/WhatsApp_Image_2025-12-25_at_20.18.27_2_vwimj7.jpg",
@@ -22,19 +22,22 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[45vh] md:h-[calc(100vh-10rem)] mt-20 lg:mt-32 w-full overflow-hidden group">
+    <section 
+      id="home" 
+      className="relative w-full overflow-hidden group bg-slate-900 mt-20 lg:mt-24 h-[250px] sm:h-[400px] md:h-[550px] lg:h-[768px]"
+    >
       {/* Slider Track */}
       <div 
         className="flex h-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {HERO_IMAGES.map((src, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0 relative">
-             <div className="absolute inset-0 bg-black/10 z-10" />
+          <div key={index} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
+            {/* Using object-contain to ensure the FULL image is visible without cropping */}
             <img 
               src={src} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
         ))}
@@ -43,27 +46,27 @@ const Hero: React.FC = () => {
       {/* Navigation Buttons */}
       <button 
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/30 hover:bg-black/50 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/20 shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/10 shadow-xl"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
       </button>
       <button 
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/30 hover:bg-black/50 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/20 shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/10 shadow-xl"
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 md:space-x-3">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-2 md:space-x-3">
         {HERO_IMAGES.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 shadow-sm ${
-              idx === current ? 'bg-white w-6 md:w-8' : 'bg-white/50 w-1.5 md:w-2 hover:bg-white/80'
+            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 shadow-lg ${
+              idx === current ? 'bg-white w-8 md:w-12' : 'bg-white/40 w-1.5 md:w-2 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
