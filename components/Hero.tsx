@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="relative w-full overflow-hidden group bg-slate-900 mt-20 lg:mt-24 h-[250px] sm:h-[400px] md:h-[550px] lg:h-[768px]"
+      className="relative w-full overflow-hidden group bg-white mt-20 lg:mt-32 aspect-[1920/768] min-h-[220px]"
     >
       {/* Slider Track */}
       <div 
@@ -32,41 +32,44 @@ const Hero: React.FC = () => {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {HERO_IMAGES.map((src, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
-            {/* Using object-contain to ensure the FULL image is visible without cropping */}
+          <div key={index} className="w-full h-full flex-shrink-0 relative">
+            {/* 
+                Since the parent container now has the exact aspect ratio of the image (1920/768), 
+                object-cover will fill the space perfectly without cropping important content. 
+            */}
             <img 
               src={src} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons - Smaller and more refined */}
       <button 
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/10 shadow-xl"
+        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 p-1.5 md:p-3 bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/10"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+        <ChevronLeft className="h-5 w-5 md:h-8 md:w-8" />
       </button>
       <button 
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/10 shadow-xl"
+        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 p-1.5 md:p-3 bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/10"
         aria-label="Next slide"
       >
-        <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+        <ChevronRight className="h-5 w-5 md:h-8 md:w-8" />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-2 md:space-x-3">
+      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 md:space-x-3">
         {HERO_IMAGES.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 shadow-lg ${
-              idx === current ? 'bg-white w-8 md:w-12' : 'bg-white/40 w-1.5 md:w-2 hover:bg-white/70'
+            className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${
+              idx === current ? 'bg-white w-6 md:w-10' : 'bg-white/40 w-1 md:w-1.5 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
