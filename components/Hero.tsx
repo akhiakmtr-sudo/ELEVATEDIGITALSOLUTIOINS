@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HERO_IMAGES = [
-  "https://res.cloudinary.com/ditsmq3r6/image/upload/v1764059219/5_Compelling_Reasons_to_Start_Your_Career_as_a_Digital_Marketer_yaaa55.jpg",
-  "https://res.cloudinary.com/ditsmq3r6/image/upload/v1764059983/download_ypst99.jpg",
-  "https://res.cloudinary.com/ditsmq3r6/image/upload/v1764059983/Want_to_build_website_for_your_business__yxp0xo.jpg",
-  "https://res.cloudinary.com/ditsmq3r6/image/upload/v1764059983/_Master_Article_Writing__Tips_for_Engaging_Informative_Content_Creation__jtsziw.jpg",
-  "https://res.cloudinary.com/ditsmq3r6/image/upload/v1764059983/_Master_Article_Writing__Tips_for_Engaging_Content_and_SEO_Success__dosxni.jpg"
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674282/WhatsApp_Image_2025-12-25_at_20.18.26_r2u3vx.jpg",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.28_mta0wc.jpg",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.27_1_c5xb3v.jpg",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674280/WhatsApp_Image_2025-12-25_at_20.18.27_2_vwimj7.jpg",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674279/WhatsApp_Image_2025-12-25_at_20.18.27_3_kcbzjv.jpg"
 ];
 
 const Hero: React.FC = () => {
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       >
         {HERO_IMAGES.map((src, index) => (
           <div key={index} className="w-full h-full flex-shrink-0 relative">
-             <div className="absolute inset-0 bg-indigo-900/10 mix-blend-multiply z-10" />
+             <div className="absolute inset-0 bg-black/10 z-10" />
             <img 
               src={src} 
               alt={`Slide ${index + 1}`} 
@@ -43,14 +43,14 @@ const Hero: React.FC = () => {
       {/* Navigation Buttons */}
       <button 
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/30 hover:bg-black/50 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/20 shadow-lg"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
       </button>
       <button 
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-black/30 hover:bg-black/50 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/20 shadow-lg"
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
