@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[calc(100vh-6rem)] mt-24 w-full overflow-hidden group">
+    <section id="home" className="relative h-[45vh] md:h-[calc(100vh-10rem)] mt-20 lg:mt-32 w-full overflow-hidden group">
       {/* Slider Track */}
       <div 
         className="flex h-full transition-transform duration-700 ease-in-out"
@@ -29,7 +30,6 @@ const Hero: React.FC = () => {
       >
         {HERO_IMAGES.map((src, index) => (
           <div key={index} className="w-full h-full flex-shrink-0 relative">
-             {/* Optional Overlay for consistent brightness, remove if you want raw images */}
              <div className="absolute inset-0 bg-indigo-900/10 mix-blend-multiply z-10" />
             <img 
               src={src} 
@@ -43,27 +43,27 @@ const Hero: React.FC = () => {
       {/* Navigation Buttons */}
       <button 
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-8 w-8" />
+        <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
       </button>
       <button 
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/20 hover:bg-white/40 text-white rounded-full backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 border border-white/30 shadow-lg"
         aria-label="Next slide"
       >
-        <ChevronRight className="h-8 w-8" />
+        <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 md:space-x-3">
         {HERO_IMAGES.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-2 rounded-full transition-all duration-300 shadow-sm ${
-              idx === current ? 'bg-white w-8' : 'bg-white/50 w-2 hover:bg-white/80'
+            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 shadow-sm ${
+              idx === current ? 'bg-white w-6 md:w-8' : 'bg-white/50 w-1.5 md:w-2 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

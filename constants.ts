@@ -1,3 +1,4 @@
+
 import { 
   Megaphone, 
   Palette, 
@@ -11,8 +12,8 @@ import { NavItem, ServiceItem } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Mission', href: '#mission' },
   { label: 'Services', href: '#services' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ];
 

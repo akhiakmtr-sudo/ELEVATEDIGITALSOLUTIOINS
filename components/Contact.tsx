@@ -1,22 +1,6 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
-// Custom Threads Icon since it's not standard in all icon sets yet
-const ThreadsIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M19 12c0 4-3 7-7 7a7 7 0 1 1 0-14c1.5 0 3 .5 4 1.5l1 1" />
-    <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
-  </svg>
-);
+import React from 'react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -40,7 +24,6 @@ const Contact: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Email Us</h3>
                   <p className="mt-1 text-slate-500">info@elevatedigitalsolutions.in</p>
-                  <p className="text-slate-500">sales@elevatedigitalsolutions.in</p>
                 </div>
               </div>
 
@@ -52,7 +35,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Call Us</h3>
-                  <p className="mt-1 text-slate-500">+91 98468 81130</p>
+                  <p className="mt-1 text-slate-500">+91 63535 39425</p>
                 </div>
               </div>
 
@@ -65,7 +48,6 @@ const Contact: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Visit Us</h3>
                   <p className="mt-1 text-slate-500">
-                    Mattannur, Kannur,<br />
                     Kerala - 670702
                   </p>
                   
@@ -73,35 +55,11 @@ const Contact: React.FC = () => {
                     Follow us on Social Media
                   </p>
 
-                  {/* Social Media Icons */}
                   <div className="flex items-center space-x-5 mt-3">
-                    <a 
-                      href="https://www.facebook.com/share/1FkfTMaU46/" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="transform transition-transform hover:scale-110"
-                      aria-label="Facebook"
-                    >
-                      <Facebook className="h-7 w-7 text-[#1877F2]" />
-                    </a>
-                    <a 
-                      href="https://www.instagram.com/eleva.tedigitalmarketing?igsh=dWE0YmR3aDEzMnNk" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="transform transition-transform hover:scale-110"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="h-7 w-7 text-[#E4405F]" />
-                    </a>
-                    <a 
-                      href="#" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="transform transition-transform hover:scale-110"
-                      aria-label="Threads"
-                    >
-                      <ThreadsIcon className="h-7 w-7 text-black" />
-                    </a>
+                    <a href="#" className="transform transition-transform hover:scale-110"><Facebook className="h-7 w-7 text-[#1877F2] fill-current" /></a>
+                    <a href="#" className="transform transition-transform hover:scale-110"><Instagram className="h-7 w-7 text-[#E4405F]" /></a>
+                    <a href="#" className="transform transition-transform hover:scale-110"><Twitter className="h-7 w-7 text-[#1DA1F2] fill-current" /></a>
+                    <a href="#" className="transform transition-transform hover:scale-110"><Linkedin className="h-7 w-7 text-[#0A66C2] fill-current" /></a>
                   </div>
                 </div>
               </div>
@@ -114,22 +72,22 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-600 mb-2">Name</label>
-                  <input type="text" id="name" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-shadow" placeholder="John Doe" />
+                  <input type="text" id="name" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-[#0061ff] focus:border-transparent outline-none transition-shadow" placeholder="John Doe" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-600 mb-2">Email</label>
-                  <input type="email" id="email" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-shadow" placeholder="john@example.com" />
+                  <input type="email" id="email" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-[#0061ff] focus:border-transparent outline-none transition-shadow" placeholder="john@example.com" />
                 </div>
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-slate-600 mb-2">Subject</label>
-                <input type="text" id="subject" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-shadow" placeholder="Project Inquiry" />
+                <input type="text" id="subject" className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-[#0061ff] focus:border-transparent outline-none transition-shadow" placeholder="Project Inquiry" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-600 mb-2">Message</label>
-                <textarea id="message" rows={4} className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none resize-none transition-shadow" placeholder="How can we help you?"></textarea>
+                <textarea id="message" rows={4} className="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-slate-900 focus:ring-2 focus:ring-[#0061ff] focus:border-transparent outline-none resize-none transition-shadow" placeholder="How can we help you?"></textarea>
               </div>
-              <button type="button" className="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors shadow-md shadow-indigo-200">
+              <button type="button" className="w-full bg-[#0061ff] text-white font-bold py-3.5 px-6 rounded-xl hover:bg-blue-700 transition-colors shadow-md shadow-blue-200">
                 Send Message
               </button>
             </form>
