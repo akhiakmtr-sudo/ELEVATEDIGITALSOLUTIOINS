@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HERO_IMAGES = [
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766675952/Untitled_1920_x_768_px_agbaho.png",
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.28_mta0wc.jpg",
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674281/WhatsApp_Image_2025-12-25_at_20.18.27_1_c5xb3v.jpg",
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674280/WhatsApp_Image_2025-12-25_at_20.18.27_2_vwimj7.jpg",
-  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766674279/WhatsApp_Image_2025-12-25_at_20.18.27_3_kcbzjv.jpg"
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766676744/Untitled_1920_x_768_px_1_d3by9y.png",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766679868/Untitled_1920_x_768_px_5_t09g3b.png",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766678851/Untitled_1920_x_768_px_4_rtud08.png",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766682534/Untitled_1920_x_768_px_6_fx6i2g.png",
+  "https://res.cloudinary.com/dufnwlqeq/image/upload/v1766678649/Untitled_1920_x_768_px_3_ruxffr.png"
 ];
 
 const Hero: React.FC = () => {
@@ -33,10 +33,6 @@ const Hero: React.FC = () => {
       >
         {HERO_IMAGES.map((src, index) => (
           <div key={index} className="w-full h-full flex-shrink-0 relative">
-            {/* 
-                Since the parent container now has the exact aspect ratio of the image (1920/768), 
-                object-cover will fill the space perfectly without cropping important content. 
-            */}
             <img 
               src={src} 
               alt={`Slide ${index + 1}`} 
@@ -46,7 +42,7 @@ const Hero: React.FC = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons - Smaller and more refined */}
+      {/* Navigation Buttons */}
       <button 
         onClick={prev}
         className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 p-1.5 md:p-3 bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/10"
